@@ -1,0 +1,34 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+    <div class="container mt-3">
+        <h1 style="color:rgb(255, 255, 255);">{{variable}}</h1>
+        <br><br><br>
+        <h5 class="epigraph" style="color:rgb(255, 255, 255);">La llegada de la Navidad es la ocasión perfecta para disfrutar de los tradicionales villancicos, presentes en estas fechas tan representativas. Invitan a la celebración de la venida del niño Dios y a promover la paz entre los hombres de buena voluntad.
+
+            Aquí te dejamos una lista de los villancicos más populares, para festejar las fechas decembrinas:
+        </h5>
+        <br><br>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <tr>        
+                        <th>NOMBRE</th>
+                        <th>DESCRIPCION</th>
+                        <th>SITIO</th>
+                    </tr>
+                </tr>
+            </thead>
+            <tbody>        
+                {% for ca in canciones %}
+                <tr>  
+                    <td>{{ ca.nombre_can }}</td>
+                    <td>{{ ca.descripcion_can }}</td>
+                    <td><a class="dropdown-item" href="{{ ca.url_can }}">Ver video</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+    
