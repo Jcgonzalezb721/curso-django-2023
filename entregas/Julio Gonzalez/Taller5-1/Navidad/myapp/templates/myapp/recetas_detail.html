@@ -1,0 +1,20 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+
+<div class="container-fluid p-5 bg-primary text-white text-center">
+  <h1>{{mensaje}}</h1>
+  <p></p> 
+</div>
+  
+<div class="container mt-5">
+  <div class="row">
+    
+    <h2 class="text-center">
+      <h2 style="color:rgb(255, 255, 255);">{{ rega.nombre_rec }}</h2>
+    </h2>
+    <p><h5 style="color:rgb(255, 255, 255);">{{ rega.descripcion_rec }}</h5></p>
+    <p><h5 style="color:rgb(255, 255, 255);">{{ rega.url_rec }}</h5></p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+    <div class="container mt-3">
+        <h1 style="color:rgb(255, 255, 255);">{{variable}}</h1>
+        <br><br>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <tr>        
+                        <th>NOMBRE</th>
+                        <th>CATEGORIA</th>
+                        <th>DESCRIPCION</th>
+                        <th>SITIO</th>
+                    </tr>
+                </tr>
+            </thead>
+            <tbody>        
+                {% for re in recetas1 %}
+                <tr>  
+                    <td>{{ re.nombre_rec }}</td>
+                    <td>{{ re.categoria_rec }}</td>
+                    <td>{{ re.descripcion_rec }}</td>
+                    <td><a class="dropdown-item" href="{{ re.url_rec }}">Ver recetas</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

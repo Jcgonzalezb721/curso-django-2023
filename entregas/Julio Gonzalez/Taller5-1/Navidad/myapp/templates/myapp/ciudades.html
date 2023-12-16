@@ -1,0 +1,32 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+    <div class="container mt-3">
+        <h1 style="color:rgb(255, 255, 255);">{{variable}}</h1>
+        <br><br><br>
+        <h5 class="epigraph" style="color:rgb(255, 255, 255);">Te hemos preparado algunas ciudades del mundo para celebrar la navidad de una manera mágica :
+        </h5>
+        <br><br>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <tr>        
+                        <th>NOMBRE</th>
+                        <th>DESCRIPCION</th>
+                        <th>SITIO</th>
+                    </tr>
+                </tr>
+            </thead>
+            <tbody>        
+                {% for ci in ciudades %}
+                <tr>  
+                    <td>{{ ci.nombre_ciu }}</td>
+                    <td>{{ ci.descripcion_ciu }}</td>
+                    <td><a class="dropdown-item" href="{{ ci.url_ciu }}">Ver link</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+    

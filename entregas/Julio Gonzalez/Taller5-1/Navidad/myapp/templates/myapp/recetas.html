@@ -1,0 +1,26 @@
+{% extends "myapp/base.html" %}
+{% block content %}
+  <div class="container mt-5">
+    <h1 style="color:rgb(255, 255, 255);">{{variable}}</h1>
+    <br><br>
+    <div class="row">
+      <div class="col-sm-6">
+      <a  class="btn btn-primary" href="{% url 'app:recetas_create'%}"> Nueva Receta</a> 
+    </div>
+      <div  class="col-sm-6">
+      {% comment %} <a  class="btn btn-primary" href="{% url 'app:receta_import'%}"> Nuevas Recetas Import</a> {% endcomment %}
+    </div>
+      {% for u_ser in rega %}
+        <div class="col-sm-4">
+          <h3>
+              <a href="{% url 'app:recetas'  u_ser.id%}">
+                <h2 style="color:rgb(255, 255, 255);">{{u_ser.nombre_rec}}</h2>
+              </a>
+            </h3>
+          <p><h5 style="color:rgb(255, 255, 255);">{{u_ser.descripcion_rec}}</h5></p>
+          <p><h5 style="color:rgb(255, 255, 255);">{{u_ser.url_rec}}</h5></p>
+        </div>
+      {% endfor %} 
+    </div>
+  </div>
+{% endblock %}
